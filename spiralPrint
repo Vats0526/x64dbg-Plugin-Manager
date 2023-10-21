@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+
+void   spiralPrint(int input[100][100],int row, int col)
+{
+    int k=0, m=row-1;
+    int l=0, n=col-1;
+
+     while (k <= m && l <= n) 
+     {
+    
+        for(int i=l; i<=n; i++)
+        {
+             cout<<input[k][i]<<' ';
+        }
+        k++;
+
+        for(int a=k; a<=m; a++)
+        {
+            cout<<input[a][n]<<' ';
+        }
+        n--;
+
+        for(int b=n; b>=l; b--)
+        {
+            cout<<input[m][b]<<' ';
+        }
+        m--;
+
+        for(int c=m; c>=k; c--)
+        {
+            cout<<input[c][l]<<' ';
+        }
+        l++;
+    
+     }
+
+}
+
+int main()
+{
+      int row, col;
+        cin >> row >> col;
+    int input[100][100];
+    int i,j;
+    for( i=0; i<row; i++)
+    {
+        for( j=0; j<col; j++)
+        {
+            cin>>input[i][j];
+        }
+    }
+      spiralPrint(input,row, col);
+
+      return 0;
+}
